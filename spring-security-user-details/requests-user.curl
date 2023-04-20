@@ -1,0 +1,14 @@
+### All users
+curl -v -X GET http://localhost:8090/user -H 'Authorization: Basic YWRtaW46cGFzc3dvcmQ='
+
+### Get user by id
+
+curl -v -X GET http://localhost:8090/user/3001 -H 'Authorization: Basic YWRtaW46cGFzc3dvcmQ='
+
+### Create user
+
+curl -v -X POST http://localhost:8090/user -H 'Content-Type: application/json' -H 'Authorization: Basic YWRtaW46cGFzc3dvcmQ=' -d ' { "login": "new_user", "password": "password", "roles": [ "user" ] } '
+
+### Update user
+
+curl -v -X PUT http://localhost:8090/user -H 'Content-Type: application/json' -H 'Authorization: Basic YWRtaW46cGFzc3dvcmQ=' -d ' { "id": 3001, "login": "new_login", "password": "newpassword", "roles": [ "user" ] } '

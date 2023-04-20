@@ -1,0 +1,6 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="7. Start User Details" type="CompoundRunConfigurationType">
+    <toRun name="SpringSecurityUserDetailsMain" type="Application" />
+    <method v="2" />
+  </configuration>
+</component>

@@ -23,6 +23,7 @@
     <modules>
         <module>spring-security-basics</module>
         <module>spring-security-basic-auth</module>
+        <module>spring-security-user-details</module>
     </modules>
 
 </project>

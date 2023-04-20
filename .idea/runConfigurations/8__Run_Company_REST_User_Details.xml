@@ -1,0 +1,6 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="8. Run Company REST User Details" type="CompoundRunConfigurationType">
+    <toRun name="Run User REST User Details" type="ShConfigurationType" />
+    <method v="2" />
+  </configuration>
+</component>
