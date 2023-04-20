@@ -1,0 +1,34 @@
+set -x
+
+[ -z ${password} ] && {
+    echo "The 'password' environment variable is not set" >&2
+    exit 1
+}
+
+### All companies without user
+curl -v -X GET http://localhost:8090/company -u "user:${password}"
+
+### Specific user's company
+curl -v -X GET http://localhost:8090/company?user-id=3001 -u "user:${password}"
+
+### Get company by id
+curl -v -X GET http://localhost:8090/company/1001 -u "user:${password}"
+
+### Create Company
+curl -v -X POST http://localhost:8090/company?user-id=3001 -H 'Content-Type: application/json' -d '{ "name": "Amazon" }' -u "user:${password}"
+exit 0
+
+### Update company
+curl -v -X PUT http://localhost:8090/company -H 'Content-Type: application/json' -d '{ "id": 1001, "name": "DXC" }' -u "user:${password}"
+
+### Get company orders
+curl -v -X GET http://localhost:8090/company/1001/order -u "user:${password}"
+
+### Create order from company
+curl -v -X POST http://localhost:8090/company/1001/order -H 'Content-Type: application/json' -d '{ "amount": 10000.0 }' -u "user:${password}"
+
+### Delete company's order
+curl -v -X DELETE http://localhost:8090/company/1001/order/2001 -u "user:${password}"
+
+### Any public info
+curl -v -X GET http://localhost:8090/info -u "user:${password}"

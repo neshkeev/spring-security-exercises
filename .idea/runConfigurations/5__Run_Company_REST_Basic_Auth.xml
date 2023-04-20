@@ -1,0 +1,6 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="5. Run Company REST Basic Auth" type="CompoundRunConfigurationType">
+    <toRun name="Run Company REST Basic Auth" type="ShConfigurationType" />
+    <method v="2" />
+  </configuration>
+</component>

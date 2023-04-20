@@ -1,17 +1,19 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Run User REST" type="ShConfigurationType" folderName="1. Spring Security Basics">
-    <option name="SCRIPT_TEXT" value="bash requests-user.curl" />
-    <option name="INDEPENDENT_SCRIPT_PATH" value="false" />
-    <option name="SCRIPT_PATH" value="$PROJECT_DIR$/spring-security-basics/request-company.curl" />
+  <configuration default="false" name="Run Company REST Basic Auth" type="ShConfigurationType" folderName="2. Spring Security Basics Auth">
+    <option name="SCRIPT_TEXT" value="bash requests-company.curl" />
+    <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+    <option name="SCRIPT_PATH" value="requests-company.curl" />
     <option name="SCRIPT_OPTIONS" value="" />
     <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="false" />
-    <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$/spring-security-basics" />
+    <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$/spring-security-basic-auth" />
     <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
     <option name="INTERPRETER_PATH" value="" />
     <option name="INTERPRETER_OPTIONS" value="" />
     <option name="EXECUTE_IN_TERMINAL" value="true" />
     <option name="EXECUTE_SCRIPT_FILE" value="false" />
-    <envs />
+    <envs>
+      <env name="password" value="" />
+    </envs>
     <method v="2" />
   </configuration>
 </component>

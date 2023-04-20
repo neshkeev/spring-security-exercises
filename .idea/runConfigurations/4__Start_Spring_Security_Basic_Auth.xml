@@ -1,0 +1,6 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="4. Start Spring Security Basic Auth" type="CompoundRunConfigurationType">
+    <toRun name="SpringSecurityBasicAuthMain" type="Application" />
+    <method v="2" />
+  </configuration>
+</component>

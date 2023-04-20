@@ -1,0 +1,18 @@
+set -x
+
+[ -z ${password} ] && {
+    echo "The 'password' environment variable is not set" >&2
+    exit 1
+}
+
+### All users
+curl -v -X GET http://localhost:8090/user -u "user:${password}"
+
+### Get user by id
+curl -v -X GET GET http://localhost:8090/user/3001 -u "user:${password}"
+
+### Create user
+curl -v -X POST http://localhost:8090/user -H 'Content-Type: application/json' -d '{ "login": "new_user", "password": "password", "roles": [ "user" ] }' -u "user:${password}"
+
+### Update user
+curl -v -X PUT http://localhost:8090/user -H 'Content-Type: application/json' -d '{ "id": 3001, "login": "new_login", "password": "newpassword", "roles": [ "user" ] }' -u "user:${password}"
