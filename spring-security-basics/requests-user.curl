@@ -1,0 +1,16 @@
+set -x
+
+### All users without HTTP Basic header
+curl -v -X GET http://localhost:8090/user
+
+### All users without HTTP Basic header
+curl -v -X GET http://localhost:8090/user -H 'Authorization: Basic dXNlcjpwYXNzd29yZA=='
+
+### Get user by id
+curl -v -X GET http://localhost:8090/user/3001 -H 'Authorization: Basic dXNlcjpwYXNzd29yZA=='
+
+### Create user
+curl -v -X POST http://localhost:8090/user -H 'Authorization: Basic dXNlcjpwYXNzd29yZA==' -H 'Content-Type: application/json' -d '{ "login": "new_user", "password": "password", "roles": [ "user" ] }'
+
+### Update user
+curl -v -X PUT http://localhost:8090/user -H 'Authorization: Basic dXNlcjpwYXNzd29yZA==' -H 'Content-Type: application/json' -d ' { "id": 3001, "login": "new_login", "password": "newpassword", "roles": [ "user" ] } '

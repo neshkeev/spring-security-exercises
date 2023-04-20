@@ -1,0 +1,30 @@
+set -x
+### All companies (without HTTP Basic header)
+curl -v http://localhost:8090/company
+
+### All companies
+curl -v -H 'Authorization: Basic dXNlcjpwYXNzd29yZA==' http://localhost:8090/company
+
+### Specific user's companies
+curl -H 'Authorization: Basic dXNlcjpwYXNzd29yZA==' http://localhost:8090/company?user-id=3001
+
+### Get company by id
+curl -H 'Authorization: Basic dXNlcjpwYXNzd29yZA==' http://localhost:8090/company/1001
+
+### Create Company
+curl -v -H 'Authorization: Basic dXNlcjpwYXNzd29yZA==' -H 'Content-Type: application/json' http://localhost:8090/company?user-id=3001 -d '{"name": "Amazon"}'
+
+### Update company
+curl -v -X PUT -H 'Authorization: Basic dXNlcjpwYXNzd29yZA==' -H 'Content-Type: application/json' -d '{ "id": 1001, "name": "DXC" }' http://localhost:8090/company
+
+### Get company orders
+curl -v -H 'Authorization: Basic dXNlcjpwYXNzd29yZA==' http://localhost:8090/company/1001/order
+
+### Create order from company
+curl -v -H 'Authorization: Basic dXNlcjpwYXNzd29yZA==' -H 'Content-Type: application/json' -d '{ "amount": 10000.0 }' http://localhost:8090/company/1001/order
+
+### Delete company's order
+curl -v -H 'Authorization: Basic dXNlcjpwYXNzd29yZA==' -X DELETE http://localhost:8090/company/1001/order/2001
+
+### Any public info
+curl -v http://localhost:8090/info

@@ -1,0 +1,6 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="1. Start Spring Security Basics" type="CompoundRunConfigurationType">
+    <toRun name="SpringSecurityBasicsMain" type="Application" />
+    <method v="2" />
+  </configuration>
+</component>
