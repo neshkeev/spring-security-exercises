@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="spring-security-basics" />
         <module name="spring-security-user-details" />
+        <module name="spring-security-login-form" />
         <module name="spring-security-basic-auth" />
       </profile>
     </annotationProcessing>
@@ -20,6 +21,7 @@
       <module name="lab-03-solution" options="-parameters" />
       <module name="spring-security-basic-auth" options="-parameters" />
       <module name="spring-security-basics" options="-parameters" />
+      <module name="spring-security-login-form" options="-parameters" />
       <module name="spring-security-user-details" options="-parameters" />
     </option>
   </component>

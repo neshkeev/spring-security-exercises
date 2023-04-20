@@ -1,0 +1,6 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="10. Run Spring Security Login Form" type="CompoundRunConfigurationType">
+    <toRun name="SpringSecurityLoginFormMain" type="Application" />
+    <method v="2" />
+  </configuration>
+</component>
