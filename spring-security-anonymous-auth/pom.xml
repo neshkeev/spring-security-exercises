@@ -10,7 +10,7 @@
         <version>1.0</version>
     </parent>
 
-    <artifactId>spring-security-basic-auth</artifactId>
+    <artifactId>spring-security-anonymous-auth</artifactId>
 
     <dependencies>
         <!-- Spring MVC -->
@@ -19,15 +19,10 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!-- Spring Security and Spring Security Test -->
+        <!-- Spring Security -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-test</artifactId>
-            <scope>test</scope>
         </dependency>
 
         <!-- Spring Data and DB -->
@@ -55,4 +50,5 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
 </project>

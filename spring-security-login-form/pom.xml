@@ -5,9 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-    <groupId>com.luxoft</groupId>
-    <artifactId>spring-security-exercises</artifactId>
-    <version>1.0</version>
+        <groupId>com.luxoft</groupId>
+        <artifactId>spring-security-exercises</artifactId>
+        <version>1.0</version>
     </parent>
 
     <artifactId>spring-security-login-form</artifactId>
