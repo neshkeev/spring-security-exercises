@@ -1,4 +1,4 @@
-package com.luxoft.spingsecurity.loginform.security;
+package com.luxoft.spingsecurity.rememberme.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -26,13 +26,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http
+        http.csrf().disable()
             .sessionManagement()
+                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
             .authorizeRequests()
-                .antMatchers("/login", "/deny.html", "/logout").permitAll()
+                .antMatchers("/login", "/logout", "/deny.html").permitAll()
                 .antMatchers("/company/**", "/user/**").authenticated()
-                .antMatchers("/info").permitAll()
+                .antMatchers("/info").hasAuthority("ROLE_ANON")
                 .antMatchers("/**").denyAll()
                 .and()
             .formLogin()
@@ -42,7 +43,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .defaultSuccessUrl("/company", true)
                 .and()
             .logout()
-                .logoutRequestMatcher(new AntPathRequestMatcher("/logout"));
+                .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+                .and()
+            .anonymous()
+                // ROLE_ANONYMOUS by default
+                .authorities("ROLE_ANON")
+                .and()
+            .rememberMe()
+                .alwaysRemember(true)
+                // should be read from properties or vault better
+                .key("my-secret");
     }
 
     @Override

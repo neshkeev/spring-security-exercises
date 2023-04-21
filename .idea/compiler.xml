@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="spring-security-basics" />
         <module name="spring-security-user-details" />
+        <module name="spring-security-remember-me" />
         <module name="spring-security-login-form" />
         <module name="spring-security-anonymous-auth" />
         <module name="spring-security-basic-auth" />
@@ -24,6 +25,7 @@
       <module name="spring-security-basic-auth" options="-parameters" />
       <module name="spring-security-basics" options="-parameters" />
       <module name="spring-security-login-form" options="-parameters" />
+      <module name="spring-security-remember-me" options="-parameters" />
       <module name="spring-security-user-details" options="-parameters" />
     </option>
   </component>

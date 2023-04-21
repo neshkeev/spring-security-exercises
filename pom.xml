@@ -26,6 +26,7 @@
         <module>spring-security-user-details</module>
         <module>spring-security-login-form</module>
         <module>spring-security-anonymous-auth</module>
+        <module>spring-security-remember-me</module>
     </modules>
 
 </project>
