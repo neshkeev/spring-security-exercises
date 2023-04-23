@@ -27,6 +27,7 @@
         <module>spring-security-login-form</module>
         <module>spring-security-anonymous-auth</module>
         <module>spring-security-remember-me</module>
+        <module>spring-security-x509-client-auth</module>
     </modules>
 
 </project>

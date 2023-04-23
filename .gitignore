@@ -1,3 +1,7 @@
+*.p12
+*.pem
+*.key
+
 # Created by https://www.toptal.com/developers/gitignore/api/intellij,java,maven,vim
 # Edit at https://www.toptal.com/developers/gitignore?templates=intellij,java,maven,vim
 

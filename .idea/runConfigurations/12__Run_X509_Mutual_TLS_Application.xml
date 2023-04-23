@@ -1,0 +1,6 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="12. Run X509 Mutual TLS Application" type="CompoundRunConfigurationType">
+    <toRun name="SpringSecurityX509Main" type="Application" />
+    <method v="2" />
+  </configuration>
+</component>

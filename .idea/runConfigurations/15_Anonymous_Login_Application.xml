@@ -1,0 +1,6 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="15 Anonymous Login Application" type="CompoundRunConfigurationType">
+    <toRun name="SpringSecurityAnonymousAuthMain" type="Application" />
+    <method v="2" />
+  </configuration>
+</component>

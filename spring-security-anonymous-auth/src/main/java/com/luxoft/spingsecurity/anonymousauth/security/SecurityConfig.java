@@ -49,8 +49,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
             .anonymous()
                 .authorities("ROLE_ANON")
-                .principal(new UserDetailsAdapter(anonymous()))
-                ;
+                .principal(new UserDetailsAdapter(anonymous()));
     }
 
     @Override

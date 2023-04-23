@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="SpringSecurityAnonymousAuthMain" type="Application" factoryName="Application" nameIsGenerated="true">
+    <option name="MAIN_CLASS_NAME" value="com.luxoft.spingsecurity.anonymousauth.SpringSecurityAnonymousAuthMain" />
+    <module name="spring-security-anonymous-auth" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

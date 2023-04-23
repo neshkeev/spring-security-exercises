@@ -1,0 +1,6 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="13. Run MTLS Requests" type="CompoundRunConfigurationType">
+    <toRun name="Run MTLS Requests" type="ShConfigurationType" />
+    <method v="2" />
+  </configuration>
+</component>

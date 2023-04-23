@@ -1,0 +1,7 @@
+curl --cert src/main/resources/keystore/client/admin.pem --key src/main/resources/keystore/client/admin.key -k -v https://localhost:8090/user
+curl --cert src/main/resources/keystore/client/user1.pem --key src/main/resources/keystore/client/user1.key -k -v https://localhost:8090/user
+curl --cert src/main/resources/keystore/client/user2.pem --key src/main/resources/keystore/client/user2.key -k -v https://localhost:8090/user
+
+curl --cert src/main/resources/keystore/client/admin.pem --key src/main/resources/keystore/client/admin.key -k -v https://localhost:8090/company
+curl --cert src/main/resources/keystore/client/user1.pem --key src/main/resources/keystore/client/user1.key -k -v https://localhost:8090/company
+curl --cert src/main/resources/keystore/client/user2.pem --key src/main/resources/keystore/client/user2.key -k -v https://localhost:8090/company
