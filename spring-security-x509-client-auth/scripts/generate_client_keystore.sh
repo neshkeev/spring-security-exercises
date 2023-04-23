@@ -2,7 +2,7 @@
 
 client_keystore_pass=${1:-changeit}
 
-client_keystore_location=../src/main/resources/keystore/client
+client_keystore_location=src/main/resources/keystore/client
 client_keystore_name=keystore.p12
 
 mkdir -p "$client_keystore_location" && rm -rf "$client_keystore_location"/*

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-truststore_location=../src/main/resources/keystore/server/truststore.p12
+truststore_location=src/main/resources/keystore/server/truststore.p12
 truststore_pass=changeit
 
 mkdir -p $(dirname $truststore_location) && rm -rf "$truststore_location"

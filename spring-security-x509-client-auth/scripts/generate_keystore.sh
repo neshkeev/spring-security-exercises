@@ -4,7 +4,7 @@ keystore_alias=spring-security-x509-demo
 
 keystore_pass=${1:-changeit}
 
-keystore_location=../src/main/resources/keystore/server/keystore.p12
+keystore_location=src/main/resources/keystore/server/keystore.p12
 
 mkdir -p $(basename "$keystore_location") && rm -f "$keystore_location"
 
