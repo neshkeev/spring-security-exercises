@@ -1,6 +1,5 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="11. X509 Generate MTLS" type="CompoundRunConfigurationType">
-    <toRun name="Generate Client Keystores" type="ShConfigurationType" />
     <toRun name="Generate Keystore" type="ShConfigurationType" />
     <toRun name="Generate Truststore" type="ShConfigurationType" />
     <method v="2" />
