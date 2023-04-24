@@ -1,0 +1,15 @@
+curl -v -u 'user1:password' http://localhost:8090/company | json_pp
+curl -v -u 'admin:password' http://localhost:8090/company | json_pp
+
+curl -v -u 'admin:password' http://localhost:8090/user | json_pp
+curl -v -u 'user1:password' http://localhost:8090/user | json_pp
+
+curl -v -u 'user1:password' http://localhost:8090/user/3001 | json_pp
+
+curl -v -u 'user1:password' -X PUT -H 'Content-Type: application/json' -d ' { "id": 3001, "login": "user1", "password": "$2a$10$.N5TD2DexYCo/2RWGT3JXOXMlE6xYwhfv13ZDecgjXQ3DVz3E1YJ6", "roles": [ "user" ] } ' http://localhost:8090/user | json_pp
+curl -v -u 'user1:newpassword' http://localhost:8090/user/3001 | json_pp
+
+curl -v -u 'user1:newpassword' -X PUT -H 'Content-Type: application/json' -d ' { "id": 3002, "login": "user2", "password": "$2a$10$.N5TD2DexYCo/2RWGT3JXOXMlE6xYwhfv13ZDecgjXQ3DVz3E1YJ6", "roles": [ "user" ] } ' http://localhost:8090/user | json_pp
+curl -v -u 'admin:password' -X PUT -H 'Content-Type: application/json' -d ' { "id": 3002, "login": "user2", "password": "$2a$10$.N5TD2DexYCo/2RWGT3JXOXMlE6xYwhfv13ZDecgjXQ3DVz3E1YJ6", "roles": [ "user" ] } ' http://localhost:8090/user | json_pp
+
+curl -v -u 'user2:newpassword' http://localhost:8090/user/3002 | json_pp

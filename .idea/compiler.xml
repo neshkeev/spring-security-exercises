@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="spring-security-basics" />
         <module name="spring-security-remember-me" />
+        <module name="spring-security-acl" />
         <module name="spring-security-login-form" />
         <module name="spring-security-anonymous-auth" />
         <module name="spring-security-x509-client-auth" />
@@ -22,6 +23,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="lab-03-solution" options="-parameters" />
+      <module name="spring-security-acl" options="-parameters" />
       <module name="spring-security-anonymous-auth" options="-parameters" />
       <module name="spring-security-basic-auth" options="-parameters" />
       <module name="spring-security-basics" options="-parameters" />
