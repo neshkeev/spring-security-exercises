@@ -1,0 +1,6 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="17. Execute Curl For Spring Security ACL" type="CompoundRunConfigurationType">
+    <toRun name="Run Curl Requests" type="ShConfigurationType" />
+    <method v="2" />
+  </configuration>
+</component>
