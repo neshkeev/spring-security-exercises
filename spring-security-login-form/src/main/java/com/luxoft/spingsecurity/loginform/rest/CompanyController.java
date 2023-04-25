@@ -61,10 +61,7 @@ public class CompanyController {
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/company/{cid}/order/{oid}")
-    public void deleteOrder(
-        @PathVariable("cid") long companyId,
-        @PathVariable("oid") long orderId
-    ) {
-        companyService.deleteOrder(companyId, orderId);
+    public void deleteOrder(@PathVariable("oid") long orderId) {
+        companyService.deleteOrder(orderId);
     }
 }

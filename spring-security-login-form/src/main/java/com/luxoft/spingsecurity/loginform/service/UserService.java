@@ -3,6 +3,7 @@ package com.luxoft.spingsecurity.loginform.service;
 import com.luxoft.spingsecurity.loginform.dto.UserDto;
 import com.luxoft.spingsecurity.loginform.dto.converters.UserDtoConverter;
 import com.luxoft.spingsecurity.loginform.repository.UserRepository;
+import org.springframework.security.access.prepost.PostAuthorize;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -21,6 +22,7 @@ public class UserService {
         this.userDtoConverter = userDtoConverter;
     }
 
+    @PostAuthorize("hasPermission(returnObject, 'READ')")
     @Transactional(readOnly = true)
     public List<UserDto> getAll() {
         return userRepository.findAll().stream()

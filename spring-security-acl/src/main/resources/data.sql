@@ -100,15 +100,23 @@ ALTER TABLE acl_object_identity
 INSERT INTO acl_sid (id, principal, sid)
 VALUES (1, 1, 'user1'),
        (2, 1, 'user2'),
-       (3, 0, 'ROLE_ADMIN');
+       (3, 0, 'ROLE_ADMIN'),
+       (4, 0, 'ROLE_USER');
 
 INSERT INTO acl_class (id, class)
-VALUES (1, 'com.luxoft.spingsecurity.acl.model.Company');
+VALUES (1, 'com.luxoft.spingsecurity.acl.model.Company'),
+       (2, 'com.luxoft.spingsecurity.acl.dto.UserDto');
 
 INSERT INTO acl_object_identity (id, object_id_class, object_id_identity, parent_object, owner_sid, entries_inheriting)
 VALUES (1, 1, 1001, NULL, 3, 0),
        (2, 1, 1002, NULL, 3, 0),
        (3, 1, 1003, NULL, 3, 0);
+
+-- добавить объекты UserDTO с указанными id
+INSERT INTO acl_object_identity (id, object_id_class, object_id_identity, parent_object, owner_sid, entries_inheriting)
+VALUES (4, 2, 3001, NULL, 3, 0),
+       (5, 2, 3002, NULL, 3, 0),
+       (6, 2, 3003, NULL, 3, 0);
 
 INSERT INTO acl_entry (id, acl_object_identity, ace_order, sid, mask, granting, audit_success, audit_failure)
 VALUES (1, 1, 1, 1, 1, 1, 1, 1),
@@ -118,3 +126,21 @@ VALUES (1, 1, 1, 1, 1, 1, 1, 1),
        (5, 2, 2, 3, 1, 1, 1, 1),
        (6, 3, 1, 3, 1, 1, 1, 1),
        (7, 3, 2, 3, 2, 1, 1, 1);
+
+-- добавить полный доступ UserDTO с указанными id на ROLE_ADMIN
+INSERT INTO acl_entry (id, acl_object_identity, ace_order, sid, mask, granting, audit_success, audit_failure)
+VALUES (8, 4, 1, 3, 31, 1, 1, 1),
+       (9, 5, 1, 3, 31, 1, 1, 1),
+       (10, 6, 1, 3, 31, 1, 1, 1);
+
+-- добавить доступ на чтение UserDTO с указанными id на ROLE_USER
+INSERT INTO acl_entry (id, acl_object_identity, ace_order, sid, mask, granting, audit_success, audit_failure)
+VALUES (11, 4, 2, 4, 1, 1, 1, 1),
+       (12, 5, 2, 4, 1, 1, 1, 1),
+       (13, 6, 2, 4, 1, 1, 1, 1);
+
+-- добавить доступ на создание UserDTO с указанными id на user1
+INSERT INTO acl_entry (id, acl_object_identity, ace_order, sid, mask, granting, audit_success, audit_failure)
+VALUES (14, 4, 3, 1, 4, 1, 1, 1),
+       (15, 5, 3, 1, 4, 1, 1, 1),
+       (16, 6, 3, 1, 4, 1, 1, 1);

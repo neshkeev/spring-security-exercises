@@ -12,6 +12,8 @@ import org.springframework.security.acls.domain.*;
 import org.springframework.security.acls.jdbc.BasicLookupStrategy;
 import org.springframework.security.acls.jdbc.JdbcMutableAclService;
 import org.springframework.security.acls.jdbc.LookupStrategy;
+import org.springframework.security.acls.model.AccessControlEntry;
+import org.springframework.security.acls.model.Permission;
 import org.springframework.security.acls.model.PermissionGrantingStrategy;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
@@ -51,7 +53,12 @@ public class AclConfig {
 
     @Bean
     public PermissionGrantingStrategy permissionGrantingStrategy() {
-        return new DefaultPermissionGrantingStrategy(new ConsoleAuditLogger());
+        return new DefaultPermissionGrantingStrategy(new ConsoleAuditLogger()){
+            @Override
+            protected boolean isGranted(AccessControlEntry ace, Permission p) {
+                return (ace.getPermission().getMask() & p.getMask()) == p.getMask();
+            }
+        };
     }
 
     @Bean

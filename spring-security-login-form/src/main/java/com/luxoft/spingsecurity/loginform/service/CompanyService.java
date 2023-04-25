@@ -7,6 +7,7 @@ import com.luxoft.spingsecurity.loginform.dto.converters.OrderDtoConverter;
 import com.luxoft.spingsecurity.loginform.repository.CompanyRepository;
 import com.luxoft.spingsecurity.loginform.repository.OrderRepository;
 import com.luxoft.spingsecurity.loginform.repository.UserRepository;
+import org.springframework.security.access.prepost.PostFilter;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -36,6 +37,7 @@ public class CompanyService {
         this.orderDtoConverter = orderDtoConverter;
     }
 
+    @PostFilter("hasPermission(returnObject, 'READ')")
     @Transactional(readOnly = true)
     public List<CompanyDto> getAll() {
         return companyRepository.findAll().stream()
@@ -98,8 +100,7 @@ public class CompanyService {
     }
 
     @Transactional
-    public void deleteOrder(long companyId, long orderId) {
-        // Yes, companyId is not used now
+    public void deleteOrder(long orderId) {
         orderRepository.deleteById(orderId);
     }
 }

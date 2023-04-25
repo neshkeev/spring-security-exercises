@@ -4,6 +4,7 @@ import com.luxoft.spingsecurity.acl.dto.UserDto;
 import com.luxoft.spingsecurity.acl.dto.converters.UserDtoConverter;
 import com.luxoft.spingsecurity.acl.repository.UserRepository;
 import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.access.prepost.PostFilter;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -23,8 +24,8 @@ public class UserService {
         this.userDtoConverter = userDtoConverter;
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
     @Transactional(readOnly = true)
+    @PostFilter("hasPermission(filterObject, 'READ')")
     public List<UserDto> getAll() {
         return userRepository.findAll().stream()
             .map(userDtoConverter::toDto)
