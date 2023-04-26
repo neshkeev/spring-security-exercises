@@ -7,6 +7,8 @@ import com.luxoft.spingsecurity.acl.dto.converters.OrderDtoConverter;
 import com.luxoft.spingsecurity.acl.repository.CompanyRepository;
 import com.luxoft.spingsecurity.acl.repository.OrderRepository;
 import com.luxoft.spingsecurity.acl.repository.UserRepository;
+import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.access.prepost.PostFilter;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.access.prepost.PreFilter;
 import org.springframework.stereotype.Service;
@@ -39,6 +41,9 @@ public class CompanyService {
         this.orderDtoConverter = orderDtoConverter;
     }
 
+    @PostFilter(
+            value = "hasPermission(filterObject.id, 'Company', 'read')"
+    )
     @Transactional(readOnly = true)
     public List<CompanyDto> getAll() {
         return companyRepository.findAll().stream()
@@ -46,6 +51,7 @@ public class CompanyService {
             .collect(toList());
     }
 
+    @Secured("ROLE_ADMIN")
     @Transactional(readOnly = true)
     public CompanyDto getById(long companyId) {
         return companyRepository.findById(companyId)

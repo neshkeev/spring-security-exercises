@@ -1,0 +1,6 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="18. Run Service Tests" type="CompoundRunConfigurationType">
+    <toRun name="CompanyServiceTest" type="JUnit" />
+    <method v="2" />
+  </configuration>
+</component>

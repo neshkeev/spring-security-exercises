@@ -1,0 +1,6 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="19. Run Mock MVC Security Tests" type="CompoundRunConfigurationType">
+    <toRun name="MvcSecurityTest" type="JUnit" />
+    <method v="2" />
+  </configuration>
+</component>
