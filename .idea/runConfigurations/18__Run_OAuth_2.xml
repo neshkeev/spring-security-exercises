@@ -1,0 +1,7 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="18. Run OAuth 2" type="CompoundRunConfigurationType">
+    <toRun name="OAuth2LoginApplication" type="Application" />
+    <toRun name="Start Keycloak" type="docker-deploy" />
+    <method v="2" />
+  </configuration>
+</component>

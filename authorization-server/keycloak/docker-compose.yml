@@ -1,0 +1,16 @@
+version: "3.6"
+networks:
+  keycloak_net:
+services:
+  keycloak:
+    image: quay.io/keycloak/keycloak:21.1.0
+    hostname: keycloak
+    command:
+      - start-dev
+    networks:
+      - keycloak_net
+    ports:
+      - 18080:8080 
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin 

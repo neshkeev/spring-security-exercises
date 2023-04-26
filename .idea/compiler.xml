@@ -14,10 +14,12 @@
         <module name="spring-security-x509-client-auth" />
         <module name="spring-security-basic-auth" />
         <module name="spring-security-user-details" />
+        <module name="spring-security-oauth-login" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="lab-03-solution" target="11" />
+      <module name="spring-security-oauth-client" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -28,6 +30,8 @@
       <module name="spring-security-basic-auth" options="-parameters" />
       <module name="spring-security-basics" options="-parameters" />
       <module name="spring-security-login-form" options="-parameters" />
+      <module name="spring-security-oauth-client" options="-parameters" />
+      <module name="spring-security-oauth-login" options="-parameters" />
       <module name="spring-security-remember-me" options="-parameters" />
       <module name="spring-security-user-details" options="-parameters" />
       <module name="spring-security-x509-client-auth" options="-parameters" />

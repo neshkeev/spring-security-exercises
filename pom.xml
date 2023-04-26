@@ -29,6 +29,7 @@
         <module>spring-security-remember-me</module>
         <module>spring-security-x509-client-auth</module>
         <module>spring-security-acl</module>
+        <module>spring-security-oauth-login</module>
     </modules>
 
 </project>
